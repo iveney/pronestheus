@@ -36,6 +36,7 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    rlcp: true
     # Don't include any additional files into the archives (such as README, CHANGELOG etc). 
     files:
       - none* 
