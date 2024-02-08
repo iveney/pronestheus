@@ -54,12 +54,15 @@ release:
 
 dockers:
   - dockerfile: Dockerfile
+    use: buildx
     goos: linux
     goarch: arm
     goarm: 7
     image_templates:
-      - "ivansiu/pronestheus:{{ .Tag }}"
+      - "ivansiu/pronestheus:{{ .Tag }}-armv7"
       - "ivansiu/pronestheus:latest"
+    build_flag_templates:
+      - "--platform=linux/arm/v7"
 
 nfpms:
   - license: MIT
