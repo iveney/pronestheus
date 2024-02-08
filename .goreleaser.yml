@@ -55,7 +55,10 @@ release:
 dockers:
   - dockerfile: Dockerfile
     goos: linux
-    goarch: amd64
+    goarch:
+      - amd64
+      - arm
+    goarm: 7
     image_templates:
       - "ivansiu/pronestheus:{{ .Tag }}"
       - "ivansiu/pronestheus:latest"
