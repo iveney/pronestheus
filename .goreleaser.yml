@@ -6,15 +6,15 @@ builds:
   - id: pronestheus
     main: ./cmd/pronestheus/main.go
     binary: pronestheus
+    env:
+      - CGO_ENABLED=0
     ldflags:
       - -s -w 
       - -X main.version={{.Version}} 
       - -X main.commit={{.Commit}} 
       - -X main.date={{.Date}}
     goos:
-      - darwin
       - linux
-      - windows
     goarch:
       - amd64
       - arm
