@@ -6,8 +6,6 @@ builds:
   - id: pronestheus
     main: ./cmd/pronestheus/main.go
     binary: pronestheus
-    env:
-      - CGO_ENABLED=0
     ldflags:
       - -s -w 
       - -X main.version={{.Version}} 
@@ -17,7 +15,6 @@ builds:
       - linux
       - darwin
     goarch:
-      - amd64
       - arm
       - arm64
     goarm:
@@ -25,11 +22,6 @@ builds:
     ignore:
       - goos: darwin
         goarch: 386
-      - goos: windows
-        goarch: arm
-      - goos: windows
-        goarch: arm64
-
 
 archives:
   - id: archive
