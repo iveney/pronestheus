@@ -22,6 +22,8 @@ builds:
     ignore:
       - goos: darwin
         goarch: 386
+      - goos: darwin
+        goarch: arm
 
 archives:
   - id: archive
